@@ -1,3 +1,4 @@
+import sys
 from zingg.client import *
 from zingg.pipes import *
 
@@ -37,7 +38,7 @@ outputPipe = CsvPipe("resultFebrl", "/tmp/febrlOutput")
 
 args.setOutput(outputPipe)
 
-options = ClientOptions([ClientOptions.PHASE,"match"])
+options = ClientOptions([ClientOptions.PHASE,sys.argv[1]])
 
 #Zingg execution for the given phase
 zingg = Zingg(args, options)
